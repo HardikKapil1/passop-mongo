@@ -18,7 +18,7 @@ const addPassword = async (req, res) => {
     });
 
     res.json({ success: true, insertedId: result.insertedId });
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: "Failed to add password" });
   }
 };
@@ -32,7 +32,7 @@ const getPasswords = async (req, res) => {
     const passwords = await passwordModel.getAllPasswords(userId);
 
     res.json(passwords);
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: "Failed to get passwords" });
   }
 };
@@ -48,7 +48,7 @@ const deletePassword = async (req, res) => {
     const result = await passwordModel.deletePassword(id, userId);
 
     res.json({ success: true, result });
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: "Failed to delete" });
   }
 };

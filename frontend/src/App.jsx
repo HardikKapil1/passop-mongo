@@ -1,5 +1,4 @@
-// src/App.jsx
-import React from "react";
+
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
@@ -10,11 +9,19 @@ import Manager from "./pages/Manager";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
-// Simple ProtectedRoute component
+
+
+import PropTypes from "prop-types";
+
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem("token");
   return token ? children : <Navigate to="/login" replace />;
 };
+
+ProtectedRoute.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 
 function App() {
   return (
