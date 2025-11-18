@@ -1,6 +1,6 @@
 // src/pages/Login.jsx
 import  { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -37,7 +37,7 @@ export default function Login() {
         <input name="password" type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Password" className="p-3 border rounded" />
         <button type="submit" className="p-3 bg-green-500 rounded text-white">Login</button>
       </form>
-      <p className="mt-3">Don&apos;t have an account? <a href="/register" className="text-green-600">Register</a></p>
+      <p className="mt-3">Don&apos;t have an account? <Link to="/register" className="text-green-600">Register</Link></p>
     </div>
   );
 }

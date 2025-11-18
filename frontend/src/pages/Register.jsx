@@ -1,6 +1,6 @@
 // src/pages/Register.jsx
 import  { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Register() {
   const [username, setUsername] = useState("");
@@ -39,7 +39,7 @@ export default function Register() {
         <input value={password} type="password" onChange={(e)=>setPassword(e.target.value)} placeholder="Password" className="p-3 border rounded" />
         <button type="submit" className="p-3 bg-green-500 rounded text-white">Register</button>
       </form>
-      <p className="mt-3">Already have an account? <a href="/login" className="text-green-600">Login</a></p>
+      <p className="mt-3">Already have an account? <Link to="/login" className="text-green-600">Login</Link></p>
     </div>
   );
 }
