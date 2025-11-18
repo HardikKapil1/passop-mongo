@@ -11,7 +11,8 @@ export default function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:3000/auth/register", {
+      const base = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
+      const res = await fetch(`${base}/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, email, password }),

@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import CryptoJS from "crypto-js";
 import "react-toastify/dist/ReactToastify.css";
 
-const API_BASE = "http://localhost:3000/passwords";
+const API_BASE = (import.meta.env.VITE_BACKEND_URL || "http://localhost:3000") + "/passwords";
 const SECRET = import.meta.env.VITE_SECRET_KEY || "dev_secret_change_me";
 
 const Manager = () => {
